@@ -30,9 +30,10 @@
 
     export default {
         name: 'app',
-        data () {
-            return {
-                msg: 'Welcome to Your Vue.js App'
+        props: {
+            msg: {
+                type: String,
+                required: true,
             }
         },
         components: {

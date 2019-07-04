@@ -4,11 +4,14 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: {
+      'index': './src/main.js',
+      'blog': './src/main.js'
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist',
-    filename: 'build.js'
+    publicPath: './',
+    filename: 'js/[name].js'
   },
   module: {
     rules: [
@@ -28,9 +31,6 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this necessary.
             'scss': [
               'vue-style-loader',
               'css-loader',
@@ -61,8 +61,14 @@ module.exports = {
   },
   plugins: [
       new HtmlWebPackPlugin({
-          template: "./index.html",
-          filename: "./index.html"
+          template: "./src/index.html",
+          chunks: ['index'],
+          filename: "./index.html",
+      }),
+      new HtmlWebPackPlugin({
+          template: "./src/blog.html",
+          chunks: ['blog'],
+          filename: "./blog.html",
       })
   ],
   resolve: {
@@ -75,6 +81,7 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true,
     stats: 'errors-only',
+    publicPath: '/',
     port: 3232,
     overlay: true
   },
@@ -99,8 +106,8 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false
       }
     }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
+    // new webpack.LoaderOptionsPlugin({
+    //   minimize: true
+    // })
   ])
 }
