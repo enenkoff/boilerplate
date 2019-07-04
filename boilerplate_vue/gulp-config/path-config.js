@@ -1,6 +1,6 @@
 module.exports = {
     build: {
-        css: 'dist/css/' /* path to ready css */,
+        css: 'src/build/css/' /* path to ready css */,
         img: 'dist/images/' /* path to ready images */,
         media: 'dist/media/' /* path to ready media-files */,
         svg: 'dist/svg/' /* path to ready svg */,

@@ -1,6 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const extractCSS = require('./webpack/css.extract');
 
 const plugins = require('./webpack/plugins');
 const devserver = require('./webpack/devserver');
@@ -23,11 +24,28 @@ const common = merge([
 
 module.exports = function(env) {
     if (env === 'production') {
-        return common;
+        return merge([
+            common,
+            extractCSS()
+        ]);
     }
     if (env === 'development') {
         return merge([
             common,
+            {
+                module: {
+                    rules: [
+                        {
+                            test: /\.scss$/,
+                            use: [
+                                'style-loader',
+                                'css-loader',
+                                'sass-loader'
+                            ]
+                        }
+                    ]
+                }
+            },
             devserver()
         ]);
     }
