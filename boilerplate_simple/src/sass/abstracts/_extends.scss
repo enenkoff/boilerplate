@@ -1,11 +1,13 @@
-%fullBlock {
+%full_block {
   width: 100%;
   height: 100%;
   display: block;
 }
-%valign {
-  display: inline-block;
-  vertical-align: middle;
+%reset_btn {
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
 }
 %hover_underline {
   &:hover {
