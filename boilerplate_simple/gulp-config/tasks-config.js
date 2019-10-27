@@ -165,6 +165,7 @@ module.exports = function(gulp, plugins) {
             gulp.parallel(
                 'css:build',
                 'svg:copy',
+                'fonts:copy',
                 'html:build',
                 'js:build',
                 'img:optimize',

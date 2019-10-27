@@ -29,13 +29,6 @@ module.exports = function (gulp, plugins, path_src, path_dest) {
                         }
                     ]
                 },
-                plugins: [
-                    new webpack.ProvidePlugin({
-                        $: 'jquery/dist/jquery.min.js',
-                        jQuery: 'jquery/dist/jquery.min.js',
-                        'window.jQuery': 'jquery/dist/jquery.min.js',
-                    }),
-                ],
             }))
             .pipe(plugins.uglify())
             .pipe(plugins.rename({ suffix: '.min' }))
