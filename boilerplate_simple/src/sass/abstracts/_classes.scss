@@ -20,13 +20,13 @@
   margin: 0 auto;
   box-sizing: border-box;
   display: block;
-  @include media(hover,1025){
+  @include mq($from: desktop) {
     padding: 0 $padding;
   }
-  @include breakpoints(681,1024){
+  @include mq(mobile_xl, desktop) {
     padding: 0 0.65*$padding;
   }
-  @include media(screen,680){
+  @include mq($until: mobile_xl) {
     padding: 0 0.4*$padding;
   }
   &--lg {
@@ -51,17 +51,17 @@
 
 
 .desktop-hidden {
-  @include media(hover,1201){
+  @include mq($from: desktop) {
     display: none !important;
   }
 }
 .tablet-hidden {
-  @include media(screen,1200){
+  @include mq($until: desktop) {
     display: none !important;
   }
 }
 .mobile-hidden {
-  @include media(screen,767){
+  @include mq($until: tablet) {
     display: none !important;
   }
 }

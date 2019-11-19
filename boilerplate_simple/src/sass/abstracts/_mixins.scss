@@ -8,19 +8,8 @@
     url("../fonts/" + $file + ".woff2");
   }
 }
-@mixin media($media,$w) {
-  @if $media == hover {
-    @media screen and (min-width:$w+'px'){@content;}
-  }
-  @else {
-    @media screen and (max-width:$w+'px'){@content;}
-  }
-}
-@mixin breakpoints($from,$to){
-  @media screen and (min-width:$from+'px') and (max-width:$to+'px'){@content;}
-}
 @mixin hover(){
-  @include media(hover,1025){
+  @include mq($from: desktop) {
     &:hover {
       @content;
     }

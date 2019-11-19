@@ -15,7 +15,17 @@ $grad-begin: #2e6db6;
 $grad-end: #5bc48c;
 
 
-$padding: 50px;
+$padding: 8px;
+$padding-sm: 0.5*$padding;  // 4px
+$padding-md: 2*$padding;    // 16px
+$padding-lg: 3*$padding;    // 24px
+$padding-xl: 4*$padding;    // 32px
+$padding-xxl: 6*$padding;   // 48px
+
+$font: 16px;
+$font-sm: 0.5*$font;        // 8px
+$font-md: 1.5*$font;        // 24px
+$font-lg: 2*$font;          // 32px
 
 
 $mq-breakpoints: (

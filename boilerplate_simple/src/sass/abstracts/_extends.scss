@@ -11,7 +11,7 @@
 }
 %hover_underline {
   &:hover {
-    @include media(hover,960){
+    @include mq($from: desktop) {
       text-decoration: underline;
     }
   }

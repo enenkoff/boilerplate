@@ -1,13 +1,11 @@
 html {
 
   min-height: 100%;
+  font-size: $font;
   &.ovh {
     overflow: hidden;
   }
-  @include media(hover,1201){font-size: 14px;}
-  @include breakpoints(1025,1200){font-size: 13px;}
-  @include breakpoints(768,1024){font-size: 12px;}
-  @include media(screen,767){font-size: 11px;}
+
 }
 body {
   line-height: 1.4;
