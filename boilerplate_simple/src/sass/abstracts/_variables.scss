@@ -18,4 +18,18 @@ $grad-end: #5bc48c;
 $padding: 50px;
 
 
+$mq-breakpoints: (
+        mobile:  480px,
+        mobile_xl:  600px,
+        tablet:  800px,
+        desktop: 1025px,
+        desktop_md: 1281px,
+        desktop_xl: 1421px,
+        wide:    1725px
+) !default;
+
+//@include mq($from: desktop) {}
+//@include mq(tablet, desktop) {}
+//@include mq($until: desktop) {}
+
 

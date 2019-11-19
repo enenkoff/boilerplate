@@ -1,3 +1,4 @@
+@import "mixins/mq";
 @mixin fonts($name,$file,$weight,$style){
   @font-face {
     font-family: $name;
